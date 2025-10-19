@@ -1,0 +1,90 @@
+/* Geberal reset to remove
+ * default margins and padding
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: black;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.menu a:hover {
+    color: antiquewhite;
+}
+
+.content {
+    padding: 20px;
+}
+
+/* Hamburger Icon Styles */
+.menu-toggle {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: none; 
+    /* Hidden by default unless we are on mobile*/
+}
+
+@media(max-width:599px) {
+    /* Show teh hamburger icon */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Hide the menu */
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute; /* position relative to navbar*/
+        top: 60px; /* position below navbar*/
+        left: 0;
+        right: 0;
+        background-color: black;
+        padding: 20px 0px;
+        /* Optional */
+        z-index: 1; /* Stay on top of other elements */
+    }
+
+    /* Show the menu when class 'active' is there */
+    .menu.active {
+        display: flex;
+    }
+
+    /* Adjust teh .menu list for mobile*/
+    .menu ul {
+       flex-direction: column;
+       align-items: center; 
+    }
+
+}
